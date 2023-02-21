@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Wszystkie zamówienia</title>
+    <link th:href="@{/styles/tableStyle.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<br><br><br>
+<center>
+    <h2>Zamówienia:</h2><br>
+    <div th:if="!${#lists.isEmpty(ords)}">
+        <table class="ord-table">
+            <tr>
+                <th>ID</th>
+                <th>Nazwa Produktu</th>
+                <th>Ilość</th>
+                <th>Cena</th>
+                <th>Zapłacono</th>
+                <th>Przypisano do</th>
+            </tr>
+            <tr th:each="ord: ${ords}">
+                <td th:text="${ord.id}"></td>
+                <td th:text="${ord.productName} ?: '----'"></td>
+                <td th:text="${ord.quantity} ?: '----'"></td>
+                <td th:text="${ord.price} ?: '----'"></td>
+                <td th:text="${ord.paid} ?: '----'"></td>
+                <td th:text="${ord.appUser.username}"></td>
+            </tr>
+        </table>
+    </div>
+    <div th:if="${#lists.isEmpty(ords)}">
+        <br><b>Brak zamówień!</b>
+    </div>
+
+</center>
+</body>
+</html>

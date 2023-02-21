@@ -1,0 +1,1 @@
+Aplikacja wspierająca proces obsługi sprzedaży internetowej

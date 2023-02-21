@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Moje zamówienia</title>
+    <link th:href="@{/styles/tableStyle.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<br><br><br>
+<center>
+    <h2>Twoje zamówienia:</h2><br>
+    <div th:if="!${#lists.isEmpty(myords)}">
+        <table class="ord-table">
+            <tr>
+                <th>ID</th>
+                <th>Nazwa Produktu</th>
+                <th>Ilość</th>
+                <th>Cena</th>
+                <th>Zapłacono</th>
+                <th>Przypisano do</th>
+            </tr>
+            <tr th:each="ord: ${myords}">
+                <td th:text="${ord.getId()}"></td>
+                <td th:text="${ord.getProductName()} ?: '----'"></td>
+                <td th:text="${ord.getQuantity()} ?: '----'"></td>
+                <td th:text="${ord.getPrice() ?: '----'}"></td>
+                <td th:text="${ord.isPaid()} ?: '----'"></td>
+                <td th:text="${ord.getAppUser().getUsername()} ?: 'll'"></td>
+            </tr>
+        </table>
+    </div>
+    <div th:if="${#lists.isEmpty(myords)}">
+        <br><b>Nie posiadasz jeszcze żadnych zamówień!</b>
+    </div>
+
+
+</center>
+</body>
+</html>

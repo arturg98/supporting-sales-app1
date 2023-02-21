@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <link th:href="@{/styles/menupage.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div style="text-align: center;">
+    <div>
+        <h2>Witaj <span th:text="${name}"></span>!</h2></div>
+    <br>
+
+    <div max-width=400px background-color="white" class="menudiv">
+        <h1 class="menuh1">Menu</h1>
+        <a href="/myorders">Moje zamówienia</a>
+    </div>
+</div>
+</body>
+</html>

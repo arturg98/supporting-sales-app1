@@ -1,0 +1,51 @@
+body {
+    background-color: #f2f2f2;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+input[type=text], input[type=password], select {
+    width: 97%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.paid {
+    width: 16%;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #0076db;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    letter-spacing: 1px;
+
+}
+
+input[type=submit]:hover {
+    background-color: #0ea1ce;
+}
+
+.formregister {
+    width: 19%;
+}
+
+div {
+    width: 30%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 2px 20px 20px;
+    margin: auto;
+    border: 1px solid #0ea1ce;
+}
